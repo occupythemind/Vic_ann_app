@@ -16,7 +16,12 @@
         <br>
         <h3>{{ann.title}}</h3>
         <p>{{ann.text}}</p>
-        <p>Last modified: {{ann.modified}}</p>
+        <span style="size: 4px;">Last modified: {{ann.modified}}</span>
+        {% if user.is_staff %}
+            <br>
+            <a href="{% url 'alero_app:edit_announcement' ann.id %}"><button>Edit</button></a>
+            <a href="{% url 'alero_app:delete_announcement' ann.id %}"><button>Delete</button></a>
+        {% endif %}
         <hr>
     {% empty %}
         <p> No announcements yet.</p>
