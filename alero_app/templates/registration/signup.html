@@ -1,0 +1,27 @@
+{% extends "registration/base.html" %}
+{% block title %} Sign Up {% endblock %}
+{% block content %}
+<h2>Sign Up</h2>
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="{% url 'alero_app:signup' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" required><br>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" required><br>
+    <input type="submit" value="Sign Up">
+</form>
+
+<br>
+
+<p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+{% endblock %}

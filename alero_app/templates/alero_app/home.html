@@ -1,0 +1,24 @@
+{% extends "alero_app/base.html" %}
+
+{% block content %}
+    <h2>Welcome, {{ user.username }}!</h2>
+    {% if user.is_staff %}
+        <button>Create Announcement</button>
+    {% endif %}
+    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    <hr>
+    <h2>Announcements</h2>
+    <hr>
+    {% for ann in anns %}
+        <br>
+        <h3>{{ann.title}}</h3>
+        <p>{{ann.text}}</p>
+        <p>Last modified: {{ann.modified}}</p>
+        <hr>
+    {% empty %}
+        <p> No announcements yet.</p>
+    {% endfor %}
+{% endblock %}

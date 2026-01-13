@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="admin-page">
+<h1 id="h1">
+        Alero community group 
+    </h1>
+<header>
+    <h2>Admin Dashboard</h2>
+</header>
+
+<div class="container">
+
+    <h3>Create Announcement</h3>
+
+    <input type="text" id="author" placeholder="Admin Name">
+    <input type="text" id="title" placeholder="Announcement Title">
+    <textarea id="content" placeholder="Announcement Content"></textarea>
+
+    <button onclick="addPost()">Post Announcement</button>
+
+    <hr>
+
+    <h3>Announcements</h3>
+
+    <!-- THIS IS VERY IMPORTANT -->
+    <div id="posts"></div>
+
+</div>
+<button onclick="logout()">
+    Logout
+</button>
+<!-- Script MUST be here -->
+<script src="script.js"></script>
+
+</body>
+</html>

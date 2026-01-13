@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Announcement System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="h1">
+        Alero community group 
+    </h1>
+
+<div class="container">
+    <h1>Announcement System</h1>
+    <p>Select Login Type</p>
+
+    <button onclick="goAdmin()">Admin Login</button>
+    <button onclick="goUser()">User Login</button>
+</div>
+
+<script>
+    function goAdmin() {
+        window.location.href = "admin.html";
+    }
+    function goUser() {
+        window.location.href = "user.html";
+    }
+</script>
+<script src="script.js">script.js</script>
+</body>
+</html>
