@@ -1,0 +1,22 @@
+{% extends "alero_app/base.html" %}
+
+{% block content %} 
+  <h2>Edit Announcement</h2>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value="{{ ann.title }}" required><br><br>
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="text" rows="4" cols="50" required>{{ ann.text }}</textarea><br><br>
+    <input type="submit" value="Update Announcement">
+  </form>
+{% endblock %}
