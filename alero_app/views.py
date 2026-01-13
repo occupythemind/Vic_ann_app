@@ -29,7 +29,7 @@ def create_announcement(request):
         title = request.POST.get('title')
         text = request.POST.get('text')
         if title and text:
-            Announcement.objects.create(author=request.user, title=title, text=text)
+            Announcement.objects.create(author=request.user, title=title, text=text).save()
             messages.success(request, 'Announcement created successfully.')
             return redirect('alero_app:home')
         else:

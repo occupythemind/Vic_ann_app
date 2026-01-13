@@ -3,7 +3,7 @@
 {% block content %}
     <h2>Welcome, {{ user.username }}!</h2>
     {% if user.is_staff %}
-        <button>Create Announcement</button>
+        <a href="{% url 'alero_app:create_announcement' %}"><button>Create Announcement</button></a>
     {% endif %}
     <form action="{% url 'logout' %}" method="post" style="display: inline;">
         {% csrf_token %}
